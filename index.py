@@ -3,16 +3,23 @@ contractFile = open("contract.txt" , "r")
 result = ""
 data = {
     "[COMPANY_NAME]": "", 
-    "[CURRENT_DATE]": "", 
+    "[CURRENT_DATE]": "12/12/12", 
     "[EMPLOYEE_NAME]": "", 
     "[CITY]": "", 
     "[COUNTRY]": "", 
     "[PRICE]": "", 
 }
+def normalizeText(text): 
+    return text.replace("[", "").replace("]", "").replace("_", " ").lower()
 
-print("Company Name: ")
-cName = input()
-data["[COMPANY_NAME]"] = cName;
+def setData():
+    for dataKey in data.keys(): 
+        if data[dataKey] == "":
+            print("set " + normalizeText(dataKey) + ":")
+            newValue = input()
+            data[dataKey] = newValue
+
+setData()
 
 
 def replaceText(text, completeData): 
@@ -27,6 +34,6 @@ for row in contractFile:
     
     
 #save new file whit a new data     
-with open("contract_processed.txt", "w") as textFile:
+with open("processed/contract_processed.txt", "w") as textFile:
     textFile.write(result)
     
