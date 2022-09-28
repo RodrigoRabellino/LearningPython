@@ -21,7 +21,7 @@ def calcImc(data):
     
 def setData(): 
     for key in userData.keys():
-        newValue = float(input("set " + key + ":"))
+        newValue = float(input("set " + key + ": "))
         userData[key] = newValue
     calcImc(userData)
         
