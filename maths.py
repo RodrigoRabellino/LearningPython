@@ -61,4 +61,4 @@ def largestPalindrome(num1, num2):
 # print("find the sum of all the multiples result: " + str(find()))
 # print("result fibonacci:" + str(findSumFibonacci()))
 #print("larges prime factor of num: " + str(largestPrimeFactorX(600851475143))) #600851475143
-print("larges palindrome: " + str(largestPalindrome(999, 999))) 
+# print("larges palindrome: " + str(largestPalindrome(999, 999))) 
